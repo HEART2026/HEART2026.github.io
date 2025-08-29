@@ -1,0 +1,129 @@
+:root{
+  /* Universität Heidelberg corporate palette (approx.) */
+  --heid-red: #C61826;       /* Rot */
+  --heid-russet: #590D08;    /* Rot-Braun */
+  --heid-sand: #F4F1EA;      /* Sand */
+  --text: #1A1A1A;
+  --muted: #6B6B6B;
+  --white: #fff;
+  --maxw: 1200px;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--heid-sand)}
+
+/* Top bar */
+.nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,var(--heid-red),#b21320);color:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:20px;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--white)}
+.brand-mark{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff5a6b 0%,var(--heid-red) 45%,var(--heid-russet) 100%);box-shadow:inset 0 2px 5px rgba(255,255,255,.25)}
+.brand h1{font-size:18px;line-height:1.1;margin:0;font-weight:800;letter-spacing:.3px}
+
+.nav ul{list-style:none;margin:0;margin-left:auto;display:flex;gap:6px;padding:0}
+.nav a{display:inline-block;padding:10px 14px;border-radius:999px;color:var(--white);text-decoration:none;font-weight:600;opacity:.95}
+.nav a:hover,.nav a:focus{background:rgba(255,255,255,.14);opacity:1}
+
+/* Hero */
+.hero{
+  background:linear-gradient(120deg, rgba(198,24,38,.05), rgba(89,13,8,.05)), url('Images/Banner.jpg');
+  background-size:cover;background-position:center;color:var(--white)
+}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:96px 20px 72px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+.kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);font-weight:700;letter-spacing:.25px}
+.hero h2{font-size:56px;line-height:1.02;margin:14px 0 12px;font-weight:900}
+.hero p{font-size:18px;line-height:1.6;margin:0 0 22px;opacity:.95}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none}
+.btn-primary{background:var(--white);color:var(--heid-russet)}
+.btn-ghost{border:2px solid rgba(255,255,255,.35);color:var(--white)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.2)}
+
+.hero-card{align-self:start;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:18px;backdrop-filter:blur(8px)}
+.hero-card h3{margin:4px 0 10px;font-size:18px}
+.hero-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:14px}
+.tile .t-k{font-size:12px;opacity:.85;letter-spacing:.2px}
+.tile .t-v{font-size:18px;font-weight:800}
+
+/* Section wrapper */
+section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
+
+/* Cards */
+.card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #e6e0db}
+.card-inner{padding:26px}
+.section-title{font-size:32px;margin:0 0 18px}
+.muted{color:var(--muted)}
+
+/* Organized & Hosted by */
+.org{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.org .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--heid-sand);color:var(--heid-russet);border:1px dashed var(--heid-russet);font-weight:700}
+
+/* Sponsors */
+.sponsors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sponsor{background:#faf8f6;border:1px dashed #d7cfc8;border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:84px;font-weight:700;color:#937b6f}
+
+/* Coming Soon page (in-page destination) */
+#coming-soon .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
+#coming-soon h3{font-size:40px;margin:0 0 12px}
+.pill{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--heid-red);color:#fff;font-weight:800}
+
+/* Footer */
+footer{background:var(--heid-russet);color:#f8eae7}
+.foot{max-width:var(--maxw);margin:0 auto;padding:28px 20px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.foot a{color:#fff;text-decoration:none;opacity:.9}
+.foot a:hover{opacity:1;text-decoration:underline}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-inner{grid-template-columns:1fr}
+  .org{grid-template-columns:1fr}
+  .sponsors{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Slight translucent backdrop under hero text */
+.hero-text{background:rgba(0,0,0,.08);border-radius:14px;padding:12px 16px;display:inline-block;backdrop-filter:saturate(110%) blur(1px)}
+
+/* Black outline around white hero text */
+.hero h2, .hero p{
+  color:#fff; /* ensure white text */
+  -webkit-text-stroke: 1px rgba(0,0,0,.85);
+  text-shadow:
+    1px 0 0 rgba(0,0,0,.9),
+    -1px 0 0 rgba(0,0,0,.9),
+    0 1px 0 rgba(0,0,0,.9),
+    0 -1px 0 rgba(0,0,0,.9),
+    1px 1px 0 rgba(0,0,0,.9),
+    -1px 1px 0 rgba(0,0,0,.9),
+    1px -1px 0 rgba(0,0,0,.9),
+    -1px -1px 0 rgba(0,0,0,.9);
+}
+
+/* Inverted hero CTAs (white bg, red text, thick red outline) */
+.hero .btn-primary, .hero .btn-ghost{
+  background:#fff;
+  color: var(--heid-red);
+  border: 3px solid var(--heid-red);
+}
+.hero .btn-primary:hover, .hero .btn-ghost:hover{
+  background:#fff;
+  border-color: var(--heid-russet);
+}
+
+/* Venue layout: keep three equal boxes in one row */
+.venue-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.venue-card{position:relative;overflow:hidden;border-radius:14px;border:1px solid #e6e0db;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.08);height:240px}
+.venue-card img{display:block;width:100%;height:100%;object-fit:cover}
+.venue-caption{position:absolute;left:8px;bottom:8px;padding:6px 10px;border-radius:999px;background:rgba(198,24,38,.9);color:#fff;font-weight:700;font-size:12px}
+/* Remove hero info box and collapse hero to single column */
+.hero-card{display:none !important}
+.hero-inner{grid-template-columns:1fr}
+
+/* Hero headline: remove outline, add subtle shadow */
+.hero h2{
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,.25) !important;
+}
+
