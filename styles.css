@@ -127,3 +127,25 @@ footer{background:var(--heid-russet);color:#f8eae7}
   text-shadow: 0 2px 4px rgba(0,0,0,.25) !important;
 }
 
+/* Date line: theme red + bold */
+.banner-date{font-size:14px;line-height:1.4;display:block;margin-top:6px;opacity:.95;color:var(--heid-red);font-weight:800}
+
+/* Kicker styling override: black + bold */
+.hero .kicker{color:#000;font-weight:800}
+
+
+/* Stronger backdrop under the date line in the banner */
+.banner-date{
+  font-size:14px;
+  line-height:1.4;
+  display:inline-block;
+  margin-top:6px;
+  padding:4px 10px;
+  border-radius:10px;
+  color:var(--heid-red);
+  font-weight:800;
+  background:#fff;              /* white background */
+  border:2px solid var(--heid-red); /* red outline matching text */
+  backdrop-filter:none;
+}
+
