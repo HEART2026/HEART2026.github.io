@@ -149,3 +149,16 @@ footer{background:var(--heid-russet);color:#f8eae7}
   backdrop-filter:none;
 }
 
+/* Kicker: white text on red pill with white outline */
+.hero .kicker{
+  display:inline-block;
+  background: var(--heid-red);
+  color: #fff !important;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 2px solid #fff; /* white outline around the background */
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+
