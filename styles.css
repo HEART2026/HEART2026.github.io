@@ -194,4 +194,14 @@ footer{background:var(--heid-russet);color:#f8eae7}
   .venue-card{height:200px}
 }
 
+/* Accessible hiding for nav checkbox */
+#nav-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* Desktop defaults: keep horizontal menu, hide the MENU toggle */
+@media (min-width: 861px){
+  .nav .menu{display:flex !important;flex-direction:row;width:auto}
+  .nav-toggle{display:none}
+}
+
 
