@@ -161,6 +161,18 @@ footer{background:var(--heid-russet);color:#f8eae7}
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
+/* Kicker: white text on red pill with white outline */
+.hero .kicker{
+  display:inline-block;
+  background: var(--heid-red);
+  color: #fff !important;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 2px solid #fff; /* white outline around the background */
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
 /* Responsive navigation (hamburger) and layout tweaks */
 #nav-toggle{ display:none; }
 .nav-toggle{ display:none; cursor:pointer; align-items:center; justify-content:center; gap:6px; padding:8px; border-radius:10px; border:1px solid rgba(255,255,255,.35); }
@@ -204,4 +216,42 @@ footer{background:var(--heid-russet);color:#f8eae7}
   .nav-toggle{display:none}
 }
 
+/* Hide the checkbox accessibly */
+#nav-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+
+/* Mobile-first slide-down menu */
+@media (max-width: 860px){
+  .nav-inner{flex-wrap:wrap}
+  .nav-toggle{display:inline-flex;margin-left:auto}
+
+  /* Menu is present but collapsed */
+  .nav .menu{
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    padding:8px 0;
+    overflow:hidden;
+    max-height:0;            /* collapsed */
+    opacity:0;               /* fade in */
+    transform:translateY(-6px); /* slide from top */
+    transition:max-height .35s ease, opacity .25s ease, transform .35s ease;
+    pointer-events:none;
+  }
+
+  /* When toggled, slide down */
+  #nav-toggle:checked + .nav-toggle + .menu{
+    max-height:420px;        /* large enough to fit all items */
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  .nav .menu a{padding:12px 14px}
+}
+
+/* Desktop/tablet: horizontal menu, no toggle button */
+@media (min-width: 861px){
+  .nav .menu{display:flex !important;flex-direction:row;width:auto;max-height:none;opacity:1;transform:none;pointer-events:auto}
+  .nav-toggle{display:none}
+}
 
