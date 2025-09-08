@@ -161,4 +161,37 @@ footer{background:var(--heid-russet);color:#f8eae7}
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
 
+/* Responsive navigation (hamburger) and layout tweaks */
+#nav-toggle{ display:none; }
+.nav-toggle{ display:none; cursor:pointer; align-items:center; justify-content:center; gap:6px; padding:8px; border-radius:10px; border:1px solid rgba(255,255,255,.35); }
+.nav-toggle span{ display:block; width:22px; height:2px; background:#fff; }
+
+@media (max-width: 860px){
+  .nav-inner{ flex-wrap:wrap; }
+  .nav-toggle{ display:inline-flex; margin-left:auto; }
+  .nav .menu{ display:none; width:100%; flex-direction:column; padding:8px 0; }
+  #nav-toggle:checked + label + .menu{ display:flex; }
+  .nav a{ padding:12px 14px; }
+  .hero-inner{ padding:72px 16px 48px; }
+  .hero h2{ font-size:42px; }
+}
+
+@media (max-width: 560px){
+  .hero h2{ font-size:32px; }
+  .banner-date{ font-size:13px; }
+  .foot{ flex-direction:column; align-items:flex-start; gap:8px; }
+  .sponsors{ grid-template-columns:1fr !important; }
+  .contact-grid{ grid-template-columns:1fr !important; }
+}
+
+/* Venue responsive layout: 3→2→1 columns */
+@media (max-width: 860px){
+  .venue-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .venue-card{height:200px}
+}
+@media (max-width: 560px){
+  .venue-grid{grid-template-columns:1fr}
+  .venue-card{height:200px}
+}
+
 
