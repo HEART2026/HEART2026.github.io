@@ -61,6 +61,10 @@ section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
 .org{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
 .org .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--heid-sand);color:var(--heid-russet);border:1px dashed var(--heid-russet);font-weight:700}
 
+/* Organized & Hosted by ful */
+.norg{align-items:center}
+.norg .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--heid-sand);color:var(--heid-russet);border:1px dashed var(--heid-russet);font-weight:700}
+
 /* Sponsors */
 .sponsors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .sponsor{background:#faf8f6;border:1px dashed #d7cfc8;border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:84px;font-weight:700;color:#937b6f}
@@ -69,6 +73,16 @@ section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
 #coming-soon .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
 #coming-soon h3{font-size:40px;margin:0 0 12px}
 .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--heid-red);color:#fff;font-weight:800}
+
+/* Coming Soon page (in-page destination) */
+#announcements .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
+#announcements h3{font-size:40px;margin:0 0 12px}
+.pill{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--heid-red);color:#fff;font-weight:800}
+
+/* Coming Soon page (in-page destination) */
+#important .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 10px}
+#important h3{font-size:40px;margin:0 0 12px}
+.pill{display:inline-block;padding:8px 8px;border-radius:5px;background:var(--heid-red);color:#fff;font-weight:800}
 
 /* Footer */
 footer{background:var(--heid-russet);color:#f8eae7}

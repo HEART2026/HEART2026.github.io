@@ -20,13 +20,13 @@
       <input id="nav-toggle" type="checkbox" class="sr-only" aria-label="Toggle navigation">
       <label class="nav-toggle" for="nav-toggle" aria-label="Toggle navigation" style="color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.5px;">MENU</label>
       <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#coming-soon">Program</a></li>
-        <li><a href="#venue">Venue</a></li>
-        <li><a href="#coming-soon">Accommodation</a></li>
-        <li><a href="#coming-soon">Travel</a></li>
-        <li><a href="#coming-soon">Committees</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="./index.html#home">Home</a></li>
+        <li><a href="./Program.html">Program</a></li>
+        <li><a href="./index.html#venue">Venue</a></li>
+        <li><a href="./Images/HEART_2026_CFP.pdf">Call For Papers</a></li>
+        <li><a href="./index.html#announcements">Announcements</a></li>
+        <li><a href="./Committees.html">Committees</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -51,55 +51,220 @@
   </header>
 
   <!-- About (immediately after banner) -->
+<!--section id="call-for-papers" class="section cfp-section"-->
   <section aria-labelledby="about-title">
     <div class="card">
       <div class="card-inner">
-        <h3 id="about-title" class="section-title">About</h3>
-        <p>The International Symposium on Highly Efficient Accelerators and Reconfigurable Technologies (HEART) is a forum to present and discuss new research on computing systems utilizing acceleration technology. The main theme of HEART is achieving high efficiency through accelerators, tailored hardware architectures and new methods for computing systems, which are of utmost importance across a wide spectrum of systems. This includes  high-performance computing and data centers, as well as the mobile and IoT space.</p>
-        <h4 class="subsection-title" style="margin:18px 0 8px">Main Research Track</h4>
-        <p>Following its tradition, HEART 2026 will continue to focus on high efficiency as a cross-cutting issue and seeks contributions for the main research track in, but not limited to, the following areas:</p>
-        <ul>
-          <li><strong>Architectures for Efficient Acceleration</strong>
-            <ul>
-              <li>Novel systems/platforms based on FPGA, GPU, and other devices</li>
-              <li>Heterogeneous processor architectures and systems for high-performance and/or low-power</li>
-              <li>Domain-specific architectures</li>
-            </ul>
-          </li>
-          <li><strong>Design Methods and Tools for Efficient Acceleration</strong>
-            <ul>
-              <li>Programming paradigms, languages, and frameworks</li>
-              <li>High-level synthesis and compilers</li>
-              <li>Runtime methodologies for heterogeneous systems</li>
-              <li>Performance evaluation and analysis</li>
-            </ul>
-          </li>
-          <li><strong>Applications and Systems</strong>
-            <ul>
-              <li>Application examples that benefit from efficient acceleration to a great extent</li>
-              <li>Complete systems demonstrating increased energy efficiency and/or performance</li>
-              <li>Comparisons between accelerator technologies</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+        <h3 id="about-title" class="section-title">
+        International Symposium on Highly Efficient Accelerators <br />
+        <span class="cfp-title-accent"> and Reconfigurable Technologies (HEART)</span>
+	</h3>
+
+      <p class="cfp-meta">
+        <strong>June 17–19, 2026</strong> · Heidelberg University, Germany · <span class="cfp-badge">In-person symposium</span>
+      </p>
+
+      <!--div class="cfp-deadline" role="status" aria-live="polite">
+        <span class="cfp-deadline-label">Submissions due</span>
+        <span class="cfp-deadline-date">March 2, 2026 (AoE)</span>
+      </div-->
+
+    </header>
+
+    <!-- Intro -->
+    <div class="cfp-intro">
+      <p>
+        The International Symposium on Highly Efficient Accelerators and Reconfigurable Technologies (HEART) is a forum to present and discuss
+        new research on computing systems utilizing acceleration technology. The main theme of HEART is achieving high efficiency through
+        accelerators, tailored hardware architectures and new methods for computing systems, which are of utmost importance across a wide spectrum
+        of systems. This includes high-performance computing and data centers, as well as the mobile and IoT space.
+      </p>
     </div>
-  </section>
+
+    <!-- Quick info cards -->
+    <div class="cfp-grid">
+      <article id="important" class="card">
+        <div class="card-inner cs">
+        <!--h3 class="card-title">Important Dates and Deadlines</h3-->
+        <span class="pill">Important Dates and Deadlines</span>
+	<br>
+        <!--ul class="list">
+          <li><strong>Submissions due:</strong> March 2, 2026 (AoE)</li>
+          <li><strong>Notification:</strong> April 13, 2026 (AoE)</li>
+          <li><strong>Conference:</strong> June 17–19, 2026</li>
+        </ul-->
+          <dl class="key-dates__grid">
+            <dt>Submission due</dt>
+            <dd>March 2, 2026 (AoE)</dd>
+        
+            <dt>Notification</dt>
+            <dd>April 13, 2026 (AoE)</dd>
+        
+            <dt>Conference Dates</dt>
+            <dd>June 17–19, 2026</dd>
+          </dl>
+        
+        <style>
+          .key-dates__grid{
+            display:grid;
+            grid-template-columns: max-content 1fr;
+            gap:.5rem 1rem;
+            margin:0;
+          }
+          .key-dates__grid dt{ font-weight:600; }
+          .key-dates__grid dd{ margin:0; }
+        </style>
+	</div>
+      </article>
+
+      <article id="important" class="card">
+        <div class="card-inner cs">
+        <span class="pill">Publication</span>
+        <p class="muted">
+          Accepted papers will be published in the ACM International Conference Proceedings Series (ICPS) and will appear in the ACM Digital
+          Library open access.
+        </p>
+        <a class="link" href="https://www.acm.org/publications/proceedings" target="_blank" rel="noopener noreferrer">
+          ACM ICPS / ACM Digital Library (Open Access)
+        </a>
+      </div>
+      </article>
+
+      <article id="important" class="card">
+        <div class="card-inner cs">
+        <span class="pill">Submission Link</span>
+        <p class="muted">All submissions are handled through EasyChair.</p>
+      <!--div class="cfp-actions"-->
+      <div class="banner-date">
+        <a class="btn btn-primary" href="https://easychair.org/conferences/?conf=heart2026" target="_blank" rel="noopener noreferrer">
+          Submit via EasyChair
+        </a>
+      </div>
+      </article>
+    </div>
+
+    <!-- Topics -->
+    <section aria-labelledby="org-title">
+      <div class="card">
+        <div class="card-inner norg">
+          <div>
+            <span class="badge"> HEART 2026 Topics</span>
+        <p class="muted">
+          HEART 2026 continues to focus on <strong>high efficiency</strong> as a cross-cutting issue and seeks contributions in, but not limited to,
+          the following areas:
+        </p>
+        </div>
+
+          <h4 class="card-title-sm">Architectures for Efficient Acceleration</h4>
+          <ul class="list">
+            <li>Novel systems/platforms based on FPGA, CGRA, GPU, TPU, Neuromorphic, Quantum, and other devices</li>
+            <li>Heterogeneous processor architectures and systems for high-performance and/or low-power</li>
+            <li>Domain-specific architectures</li>
+          </ul>
+
+          <h4 class="card-title-sm">Design Methods and Tools for Efficient Acceleration</h4>
+          <ul class="list">
+            <li>Programming paradigms, languages, and frameworks</li>
+            <li>High-level synthesis and compilers</li>
+            <li>Runtime methodologies for heterogeneous systems</li>
+            <li>Design space exploration</li>
+            <li>Performance and power modeling; evaluation and analysis</li>
+            <li>Benchmarking of heterogeneous and high-performance systems</li>
+            <li>New <strong>open-source</strong> tools and frameworks for efficient acceleration</li>
+          </ul>
+
+          <h4 class="card-title-sm">Applications and Systems</h4>
+          <ul class="list">
+            <li>Applications benefiting from efficient acceleration (training/inference, DSP, graph, databases, networking, scientific/HPC, real-time/edge, etc.)</li>
+            <li>Complete systems demonstrating increased energy efficiency and/or performance</li>
+            <li>Comparisons between accelerator technologies, including trade-offs in programmability, efficiency, and scalability</li>
+          </ul>
+        </div>
+        </div>
+    </section>
+    <!-- Submission categories -->
+    <section aria-labelledby="org-title">
+      <div class="card">
+        <div class="card-inner norg">
+          <div>
+            <span class="badge"> Submission Categories</span>
+         </div>
+
+          <h4 class="card-title-sm">1) Regular Papers</h4>
+          <p class="muted">
+            Prospective authors are invited to submit original contributions as <strong>12-page</strong> papers (not counting references) to be
+            considered regular papers.
+          </p>
+
+          <h4 class="card-title-sm">2) Work in Progress Papers</h4>
+          <p class="muted">
+            Prospective authors are invited to Submit an extended abstract of up to <strong>4 pages</strong> (not counting references) about an ongoing research project. If the abstract is accepted,
+            the author will be asked to give an oral presentation. The presentation time may be shorter than that for regular papers.
+          </p>
+
+          <h4 class="card-title-sm">3) Ph.D. Forum Papers</h4>
+          <p class="muted">
+            Ph.D. students working in areas that are relevant to HEART are sollicited to submit an extended abstract of up to <strong>4 pages</strong> (not counting references) comprising a summary of their research findings, work in progress, and/or planned research. The Ph.D. forum is intended as a platform for Ph.D. students to interact with peers and experienced researchers. 
+          </p>
+          <ul class="list compact">
+            <li>The Ph.D. student should be the first author; thesis advisors may be co-authors.</li>
+            <li>The technical program committee will review submissions to ensure quality and relevance.</li>
+            <li>Accepted contributions must be presented at the conference and will require full registration.</li>
+          </ul>
+         </div>
+         </div>
+    </section>
+
+
+    <!-- Guidelines -->
+    <section aria-labelledby="org-title">
+      <div class="card">
+        <div class="card-inner norg">
+          <div>
+            <span class="badge">Submission Guidelines — Format and Anonymity</span>
+        <!--h3 id="guidelines" class="block-title">Submission Guidelines — Format and Anonymity</h3-->
+              <p>
+                HEART 2026 adopts a <strong>double-blind</strong> review process: authors should <strong>not</strong> identify themselves, so author names,
+                affiliations, e-mail addresses, and self-references should be blanked out.
+              </p>
+
+              <p>
+                Please prepare your manuscript using the ACM Primary Article Template (sigconf format) and follow the guidelines (“2. The Workflow and
+                Templates”).
+              </p>
+
+              <div class="links-grid" aria-label="Templates and author resources">
+                <a class="link" href="https://www.acm.org/publications/authors/submissions" target="_blank" rel="noopener noreferrer">
+                  ACM author submissions guidelines
+	        </a><br>
+                <a class="link" href="https://www.acm.org/binaries/content/assets/publications/taps/acm_submission_template.docx" target="_blank" rel="noopener noreferrer">
+                  Template for Microsoft Word
+	        </a><br>
+                <a class="link" href="https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip" target="_blank" rel="noopener noreferrer">
+                  Template for LaTeX (acmart-primary)
+	        </a><br>
+                <a class="link" href="https://www.overleaf.com/gallery/tagged/acm-official#.WOuOk2e1taQ" target="_blank" rel="noopener noreferrer">
+                  Template for Overleaf (ACM official)
+	        </a><br>
+        </div>
+        </div>
+      </section>
 
   <!-- Organized & Hosted by -->
-  <section aria-labelledby="org-title">
-    <div class="card">
-      <div class="card-inner org">
-        <div>
-          <span class="badge">Organized & hosted by</span>
-          <h3 id="org-title" class="section-title" style="margin-top:10px">Heidelberg University</h3>
-          <p class="muted">Founded in 1386, Heidelberg University is Germany’s oldest university and a leading international research institution. HEART 2026 is proudly organized and hosted by Heidelberg University in the historic city of Heidelberg.</p>
-        </div>
-        <div class="muted">
-          <img src="Images/HeidelbergUni-logo.jpg" alt="Heidelberg University logo" style="width:100%;height:auto;max-height:220px;object-fit:contain;filter: drop-shadow(0 6px 16px rgba(0,0,0,.1));" />
+    <section aria-labelledby="org-title">
+      <div class="card">
+        <div class="card-inner org">
+          <div>
+            <span class="badge">Organized & hosted by</span>
+            <h3 id="org-title" class="section-title" style="margin-top:10px">Heidelberg University</h3>
+            <p class="muted">Founded in 1386, Heidelberg University is Germany’s oldest university and a leading international research institution. HEART 2026 is proudly organized and hosted by Heidelberg University in the historic city of Heidelberg.</p>
+          </div>
+          <div class="muted">
+            <img src="Images/HeidelbergUni-logo.jpg" alt="Heidelberg University logo" style="width:100%;height:auto;max-height:220px;object-fit:contain;filter: drop-shadow(0 6px 16px rgba(0,0,0,.1));" />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </section>
 
   <!-- Venue -->
@@ -178,13 +343,45 @@
   </section>
 
   <!-- Coming Soon (catch-all destination for non-Home links) -->
-  <section id="coming-soon" aria-labelledby="cs-title">
+  <section id="announcements" aria-labelledby="cs-title">
     <div class="card">
       <div class="card-inner cs">
-        <span class="pill">Page</span>
-        <h3 id="cs-title">Coming Soon</h3>
-        <p class="muted" style="max-width:720px">We're preparing detailed information for Program, Call for Papers, Accommodation, Travel, and more. Please check back shortly.</p>
-        <p><a class="btn btn-primary" href="#home">Back to Home</a></p>
+        <span class="pill">Announcements</span>
+	<br>
+        <!--h3 id="cs-title">Announcements</h3-->
+          <ul class="updates__grid" role="list">
+            <li class="updates__row">
+		    <time class="updates__date" datetime="2025-12-18"><strong>Dec. 19, 2025</strong></time>
+              <span class="updates__text">Call for Papers Published!</span>
+            </li>
+            <li class="updates__row">
+		    <time class="updates__date" datetime="2025-08-29"><strong>Aug. 29, 2025</strong></time>
+              <span class="updates__text">HEART 2026 website is now online!</span>
+            </li>
+          </ul>
+          <style>
+            .updates__grid{
+              margin:0;
+              padding:0;
+              list-style:none;
+              display:grid;
+              gap:.5rem;
+            }
+          
+            .updates__row{
+              display:grid;
+              grid-template-columns: max-content 1fr;
+              column-gap:1rem;
+              align-items:start;
+              text-align:left; /* ensures both columns align left */
+            }
+          
+            .updates__date,
+            .updates__text{
+              justify-self:start; /* left-align each grid cell */
+            }
+          </style>
+	  <p><a class="btn btn-primary" href="#home">Back to Home</a></p>
       </div>
     </div>
   </section>
@@ -194,11 +391,12 @@
       <div>&copy; 2026 HEART — Organized & hosted by Heidelberg University</div>
       <div>
         <a href="#home">Home</a> ·
-        <a href="#coming-soon">Program</a> ·
-        <a href="#coming-soon">Call for Papers</a> ·
-        <a href="#coming-soon">Registration</a> ·
-        <a href="#venue">Venue</a> ·
-        <a href="#contact">Contact</a>
+        <a href="./Program.html">Program</a> ·
+        <a href="./index.html#venue">Venue</a> ·
+        <a href="./Images/HEART_2026_CFP.pdf">Call for Papers</a> ·
+        <a href="./index.html#announcements">Announcements</a> ·
+        <a href="./Committees.html">Committees</a> .
+        <a href="./index.html#contact">Contact</a>
       </div>
     </div>
   </footer>
