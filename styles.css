@@ -49,11 +49,11 @@ body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvet
 .tile .t-v{font-size:18px;font-weight:800}
 
 /* Section wrapper */
-section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
+section{max-width:var(--maxw);margin:0 auto;padding:40px 1px}
 
 /* Cards */
 .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #e6e0db}
-.card-inner{padding:26px}
+.card-inner{padding:20px}
 .section-title{font-size:32px;margin:0 0 18px}
 .muted{color:var(--muted)}
 
