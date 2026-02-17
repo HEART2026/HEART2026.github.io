@@ -65,6 +65,49 @@ section{max-width:var(--maxw);margin:0 auto;padding:40px 1px}
 .norg{align-items:center}
 .norg .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--heid-sand);color:var(--heid-russet);border:1px dashed var(--heid-russet);font-weight:700}
 
+.norg .cfp-pdf{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 12px;
+  border-radius:999px;
+  background:var(--heid-sand);
+  color:var(--heid-russet);
+  border:2px solid var(--heid-russet);
+  font-weight:700;
+  text-decoration:none;
+}
+/* preview container */
+.norg .pdf-preview{
+  position:absolute;
+  bottom:120%;
+  left:50%;
+  transform:translateX(-50%);
+  width:200px;
+  height:260px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  border-radius:8px;
+  overflow:hidden;
+  background:#fff;
+  z-index:10;
+}
+
+/* actual PDF */
+.norg .pdf-preview embed{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* show on hover */
+.norg .cfp-pdf:hover .pdf-preview{
+  opacity:1;
+  transform:translateX(-50%) translateY(-6px);
+}
 /* Sponsors */
 .sponsors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .sponsor{background:#faf8f6;border:1px dashed #d7cfc8;border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:84px;font-weight:700;color:#937b6f}
@@ -267,5 +310,77 @@ footer{background:var(--heid-russet);color:#f8eae7}
 @media (min-width: 861px){
   .nav .menu{display:flex !important;flex-direction:row;width:auto;max-height:none;opacity:1;transform:none;pointer-events:auto}
   .nav-toggle{display:none}
+}
+
+/* =========================
+   Keynote Component
+   ========================= */
+
+.keynote {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Photo */
+.keynote-photo {
+  width: 100%;
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #eee;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-weight: 600;
+}
+
+.photo-img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Content */
+.keynote-name {
+  margin-top: 0;
+  margin-bottom: .25rem;
+}
+
+.keynote-affiliation {
+  margin-top: 0;
+  color: var(--muted, #666);
+}
+
+.keynote-title {
+  font-weight: 600;
+}
+
+.keynote-section {
+  margin-top: 1.75rem;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted, #666);
+}
+
+/* =========================
+   Responsive Behavior
+   ========================= */
+
+@media (max-width: 768px) {
+  .keynote {
+    grid-template-columns: 1fr;
+  }
+
+  .keynote-photo {
+    max-width: 280px;
+  }
 }
 

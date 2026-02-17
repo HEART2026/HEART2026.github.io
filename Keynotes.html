@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEART 2026 – Keynote Speakers</title>
+  <meta name="description" content="HEART 2026 Keynote Speakers. International Symposium on Highly Efficient Accelerators and Reconfigurable Technologies." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-nav.css">
+  <link rel="stylesheet" href="styles-hero.css">
+
+  <!-- Keynote-specific styles -->
+  <link rel="stylesheet" href="styles-keynotes.css">
+</head>
+
+<body>
+
+<!-- Navigation (unchanged) -->
+<nav class="nav">
+  <div class="nav-inner">
+    <input id="nav-toggle" type="checkbox" class="sr-only" aria-label="Toggle navigation">
+    <label class="nav-toggle" for="nav-toggle"
+           aria-label="Toggle navigation"
+           style="color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.5px;">
+      MENU
+    </label>
+    <ul class="menu">
+      <li><a href="./index.html#home">Home</a></li>
+      <li><a href="./Program.html">Program</a></li>
+      <li><a href="./Keynotes.html">Keynotes</a></li>
+      <li><a href="./index.html#venue">Venue</a></li>
+      <li><a href="./index.html#cfp">Call For Papers</a></li>
+      <li><a href="./index.html#announcements">Announcements</a></li>
+      <li><a href="./Committees.html">Committees</a></li>
+      <li><a href="./index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero (IDENTICAL STRUCTURE TO HOMEPAGE) -->
+<!--header class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="kicker">HEART 2026 International Symposium on</span>
+      <div class="hero-text">
+        <h2>Keynote Speakers</h2>
+        <span class="banner-date">Heidelberg, Germany, June 17 – 19, 2026</span>
+      </div>
+    </div>
+  </div>
+</header-->
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="kicker">HEART 2026 International Symposium on</span>
+        <div class="hero-text">
+          <h2>Highly Efficient Accelerators &amp; Reconfigurable Technologies</h2>
+          <span class="banner-date">Heidelberg, Germany, June 17 – 19, 2026</span>
+        </div>
+        <!--
+        <div class="cta">
+          <a class="btn btn-primary" href="#coming-soon" aria-label="Go to Call for Papers">Call for Papers</a>
+          <a class="btn btn-ghost" href="#coming-soon" aria-label="Go to Registration">Registration</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </header>
+
+<!-- Keynotes -->
+<section aria-labelledby="keynotes-title">
+  <div class="card">
+    <div class="card-inner">
+
+      <span class="pill">Confirmed Keynote Speaker</span>
+      <!--h3 id="keynotes-title" style="margin-top:1rem;">Keynotes</h3-->
+
+      <!-- ========================================================= -->
+      <!-- KEYNOTE COMPONENT (repeat this block per speaker) -->
+      <!-- ========================================================= -->
+      <article class="keynote">
+
+        <div class="keynote-photo">
+          <!--div class="photo-placeholder">Speaker Photo</div-->
+          <img src="Images/Andrew-Putnam.png"
+               alt="Andrew Putnam"
+               class="photo-img">
+        </div>
+
+        <div class="keynote-content">
+
+          <h4 class="keynote-name">Andrew Putnam</h4>
+          <p class="keynote-affiliation">
+            Partner General Manager, Cloud and AI Hardware Engineering, Microsoft
+          </p>
+
+          <h5 class="keynote-section">Keynote Title</h5>
+          <p class="keynote-title">
+            From Prototype to Planet-Scale: A Decade of Acceleration at Hyperscale
+          </p>
+
+          <h5 class="keynote-section">Abstract</h5>
+          <p>
+            Over the past decade, accelerators – especially GPUs – have become central
+            to hyperscale computing. Yet making individual kernels faster does not
+            automatically make large, multi-tenant systems faster.
+          </p>
+          <p>
+            Drawing on more than ten years of running FPGAs continuously in production
+            at Microsoft, this keynote reflects on what it actually takes to accelerate
+            real cloud systems at global scale.
+          </p>
+          <p>
+            Looking forward, GPUs are indispensable – but not sufficient on their own.
+            The next phase of hyperscale performance will depend on heterogeneous,
+            data-centric hardware–software co-design and on engineering systems that
+            can evolve in production for a decade or more.
+          </p>
+
+          <h5 class="keynote-section">Bio</h5>
+          <p>
+            Andrew Putnam is a Partner General Manager for Cloud and AI Hardware
+            Engineering at Microsoft, where he leads programmable accelerator
+            development across Azure’s hyperscale infrastructure.
+          </p>
+          <p>
+            He is the co-founder of Project Catapult and served as the architect and
+            engineering leader for Azure Accelerated Networking (Azure Boost),
+            enabling more than a 10× increase in production network bandwidth.
+          </p>
+
+        </div>
+      </article>
+      <!-- ========================================================= -->
+
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="foot">
+    <div>&copy; 2026 HEART — Organized & hosted by Heidelberg University</div>
+    <div>
+      <a href="./index.html#home">Home</a> ·
+      <a href="./Program.html">Program</a> ·
+      <a href="./Keynotes.html">Keynotes</a> ·
+      <a href="./index.html#venue">Venue</a> ·
+      <a href="./index.html#cfp">Call for Papers</a> ·
+      <a href="./index.html#announcements">Announcements</a> ·
+      <a href="./Committees.html">Committees</a> ·
+      <a href="./index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
