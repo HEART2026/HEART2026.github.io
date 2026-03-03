@@ -21,13 +21,14 @@
       <label class="nav-toggle" for="nav-toggle" aria-label="Toggle navigation" style="color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.5px;">MENU</label>
       <ul class="menu">
         <li><a href="./index.html#home">Home</a></li>
-        <li><a href="#program">Program</a></li>
+        <li><a href="./Program.html">Program</a></li>
         <li><a href="./Keynotes.html">Keynotes</a></li>
         <li><a href="./Tutorial.html">SNN Tutorial</a></li>
         <li><a href="./index.html#venue">Venue</a></li>
         <li><a href="./index.html#cfp">Call For Papers</a></li>
         <li><a href="./index.html#announcements">Announcements</a></li>
         <li><a href="./Committees.html">Committees</a></li>
+        <li><a href="./index.html#sponsors">Sponsors</a></li>
         <li><a href="./index.html#contact">Contact</a></li>
       </ul>
     </div>
@@ -53,14 +54,69 @@
   </header>
 
 
-  <!-- Coming Soon (catch-all destination for non-Home links) -->
-  <section id="announcements" aria-labelledby="cs-title">
+  <!-- Tutorial Section -->
+  <section id="tutorial" aria-labelledby="tutorial-title">
     <div class="card">
-      <div class="card-inner cs">
-        <span class="pill">HEART 2026 Tutorial To be announced</span>
-        <!--h3 id="cs-title">Program To be announced</h3-->
-        <p class="muted" style="max-width:720px">Information on the Tutorial will be announced near the conference date. Please check back then.</p>
-        <p><a class="btn btn-primary" href="./index.html#home">Back to Home</a></p>
+      <div class="card-inner norg">
+
+        <div>
+          <span class="badge">Tutorial: Development and Deployment of SNNs on FPGA with YANA</span>
+        </div>
+
+        <p>
+          This tutorial presents an in-depth introduction to <strong>YANA</strong>, a many-core near-memory-computing
+          Spiking Neural Network (SNN) FPGA accelerator developed at the FZI Research Center for
+          Information Technology. The accelerator targets embedded sensor processing applications in
+          medical, industrial, and automotive contexts, with a focus on dataset evaluation and
+          real-time processing of high data rate neuromorphic sensors. Participants will gain hands-on
+          experience with key co-design decisions such as quantization, the mapping of logical neurons
+          onto physical processing elements, and the accelerator's integration within a System-on-Chip
+          (SoC) FPGA environment running Linux. The YANA framework will be made available open source
+          ahead of the tutorial.
+        </p>
+
+        <h4 style="margin-top:1.5rem;">Tutorial Outline <span style="font-weight:400;font-style:italic;">(preliminary)</span></h5>
+        <ol>
+          <li>Introduction, Overview &amp; Setup</li>
+          <li>On participant laptops:
+            <ul>
+              <li>Train &amp; evaluate a quantized deep SNN using <a href="https://github.com/norse/norse" target="_blank" rel="noopener">Norse</a>, applying different levels of pruning</li>
+              <li>Export the trained model using <a href="https://github.com/neuromorphs/NIR" target="_blank" rel="noopener">NIR</a> for further processing</li>
+              <li>Map and partition the deep SNN onto the YANA many-core accelerator using the YANA toolchain
+                <ul>
+                  <li>Evaluate results for different parameterizations</li>
+                </ul>
+              </li>
+              <li>Transfer generated accelerator init files to the <a href="https://www.amd.com/de/products/system-on-modules/kria/k26/kr260-robotics-starter-kit.html" target="_blank" rel="noopener">KR260</a> platform</li>
+            </ul>
+          </li>
+          <li>On KR260:
+            <ul>
+              <li>Initialize the YANA accelerator</li>
+              <li>Evaluate test samples</li>
+              <li>Evaluate accelerator performance across different pruning levels</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h4 style="margin-top:1.5rem;">Contact</h3>
+        <p>
+          <a href="mailto:pachideh@fzi.de">Brian Pachideh</a> —
+          Cc: <a href="mailto:nitzsche@fzi.de">Sven Nitzsche</a>,
+          <a href="mailto:neher@fzi.de">Moritz Neher</a>
+        </p>
+
+        <p class="muted" style="margin-top:1.5rem;">
+          <strong style="font-style:normal;">Further announcements</strong> —
+          Additional information will be published on this page as the conference approaches. This includes
+          preparation steps and any software participants should have ready on their laptops before the
+          tutorial, downloadable resources shared ahead of time, and details on what to bring on the day.
+          Please check back closer to the event.
+        </p>
+
+        <hr style="margin-top:2rem;margin-bottom:1rem;border:none;border-top:1px solid var(--border, #e2e8f0);">
+        <p><em><a href="https://en.wikipedia.org/wiki/I_Lost_My_Heart_in_Heidelberg_(song)" target="_blank" rel="noopener">YANA found its HEART in Heidelberg.</a></em></p>
+
       </div>
     </div>
   </section>
