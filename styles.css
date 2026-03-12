@@ -251,6 +251,35 @@ footer{background:var(--heid-russet);color:#f8eae7}
   .foot{ flex-direction:column; align-items:flex-start; gap:8px; }
   .sponsors{ grid-template-columns:1fr !important; }
   .contact-grid{ grid-template-columns:1fr !important; }
+
+  /* --- Important Dates: stack label above date --- */
+  .key-dates__grid{
+    grid-template-columns:1fr !important;
+    gap:.25rem !important;
+  }
+  .key-dates__grid dt{
+    margin-top:.75rem;
+  }
+  .key-dates__grid dd{
+    padding-left:.75rem;
+  }
+
+  /* --- Announcements: stack date above text --- */
+  .updates__row{
+    grid-template-columns:1fr !important;
+    gap:.15rem !important;
+  }
+
+  /* --- Sponsors: stack logo above description --- */
+  .sponsor{
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:16px !important;
+  }
+  .sponsor img{
+    width:160px !important;
+    max-width:100% !important;
+  }
 }
 
 /* Venue responsive layout: 3→2→1 columns */
@@ -384,99 +413,3 @@ footer{background:var(--heid-russet);color:#f8eae7}
   }
 }
 
-/* ===== Mobile Responsiveness Fixes ===== */
-
-@media screen and (max-width: 390px) {
-
-  /* --- Important Dates & Deadlines --- */
-  /* Make the definition list stack vertically */
-  dl {
-    display: block;
-    width: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-
-  dt {
-    display: block;
-    width: 100%;
-    font-weight: bold;
-    margin-top: 12px;
-  }
-
-  dd {
-    display: block;
-    width: 100%;
-    margin-left: 0;       /* Remove default indentation */
-    padding-left: 10px;
-    margin-bottom: 8px;
-  }
-
-  /* --- Sponsors Section --- */
-  /* Prevent sponsor logos/images from overflowing */
-  #sponsors img,
-  [id="sponsors"] img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Stack sponsor blocks vertically */
-  #sponsors .sponsor,
-  #sponsors > div,
-  #sponsors figure,
-  #sponsors a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  /* Sponsor description text wrapping */
-  #sponsors p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* --- Announcements Section --- */
-  #announcements ul {
-    padding-left: 15px;
-  }
-
-  #announcements li {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    margin-bottom: 12px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* --- General layout safety --- */
-  body {
-    overflow-x: hidden;
-  }
-
-  section, .section, .container, .content {
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-
-  /* Prevent any element from causing horizontal scroll */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  pre, code {
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
