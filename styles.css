@@ -116,7 +116,6 @@ section{max-width:var(--maxw);margin:0 auto;padding:40px 1px}
 #coming-soon .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
 #coming-soon h3{font-size:40px;margin:0 0 12px}
 .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--heid-red);color:#fff;font-weight:800}
-
 /* Coming Soon page (in-page destination) */
 #announcements .cs{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
 #announcements h3{font-size:40px;margin:0 0 12px}
@@ -371,6 +370,7 @@ footer{background:var(--heid-russet);color:#f8eae7}
 
 .photo-img {
   width: 100%;
+  border: 2px solid black;
   border-radius: 12px;
   display: block;
 }
