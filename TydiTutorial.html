@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEART 2026 – Tydi Tools Tutorial</title>
+  <meta name="description" content="HEART 2026 tutorial: Tydi Tools, an open-source EDA toolchain for fast hardware debugging of Chisel high-level HDL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-venue.css">
+  <link rel="stylesheet" href="styles-hero.css">
+  <link rel="stylesheet" href="styles-nav.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <input id="nav-toggle" type="checkbox" class="sr-only" aria-label="Toggle navigation">
+      <label class="nav-toggle" for="nav-toggle" aria-label="Toggle navigation" style="color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.5px;">MENU</label>
+      <ul class="menu">
+        <li><a href="./index.html#home">Home</a></li>
+        <li><a href="./Program.html">Program</a></li>
+        <li><a href="./Registration.html">Registration</a></li>
+        <li><a href="./Keynotes.html">Keynotes</a></li>
+        <li><a href="./Tutorial.html">SNN Tutorial</a></li>
+        <li><a href="./TydiTutorial.html">Tydi Tutorial</a></li>
+        <li><a href="./index.html#venue">Venue</a></li>
+        <li><a href="./index.html#cfp">Call For Papers</a></li>
+        <li><a href="./index.html#announcements">Announcements</a></li>
+        <li><a href="./Committees.html">Committees</a></li>
+        <li><a href="./index.html#sponsors">Sponsors</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="kicker">HEART 2026 International Symposium on</span>
+        <div class="hero-text">
+          <h2>Highly Efficient Accelerators &amp; Reconfigurable Technologies</h2>
+          <span class="banner-date">Heidelberg, Germany, June 17 – 19, 2026</span>
+        </div>
+        <!--
+        <div class="cta">
+          <a class="btn btn-primary" href="#coming-soon" aria-label="Go to Call for Papers">Call for Papers</a>
+          <a class="btn btn-ghost" href="#coming-soon" aria-label="Go to Registration">Registration</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Tutorial Section -->
+  <section id="tutorial" aria-labelledby="tutorial-title">
+    <div class="card">
+      <div class="card-inner norg">
+
+        <div>
+          <span class="badge">Tutorial: Tydi Tools</span>
+        </div>
+
+        <h3 id="tutorial-title" style="margin-top:1rem;">Tydi Tools: Open-Source EDA Toolchain for Fast HW Debugging of Chisel High-Level HDL</h3>
+
+        <p>
+          This hands-on tutorial introduces participants to the <strong>Tydi ecosystem</strong>, an open-source
+          hardware design and debugging framework for high-level hardware development in Chisel and other
+          HLS languages such as SpinalHDL and Clash. The tutorial focuses on improving hardware design
+          productivity, traceability, and debugging by preserving high-level type and behavioral information
+          throughout the hardware design flow. Participants will explore how modern open-source Electronic
+          Design Automation (EDA) tools can be used to move from high-level hardware descriptions to
+          synthesizable RTL, using advanced debugging workflows.
+        </p>
+
+        <p>
+          The tutorial is divided into two complementary parts. In the first part, attendees will begin with
+          a Chisel hardware design and use Tydi and Tydi-Chisel to generate type-aware intermediate
+          representations and synthesizable Verilog. This section demonstrates how high-level type information
+          can be preserved across the design stack and how this information improves analysis, verification,
+          and maintainability compared to traditional RTL-centric methodologies.
+        </p>
+
+        <p>
+          The second part of the tutorial focuses on debugging complex hardware systems using Tywaves and
+          ChiselTrace. Participants will work with a Chisel design containing an intentionally inserted bug and
+          learn how to trace faulty behavior from waveform activity back to the original Chisel source code.
+          Using type-aware waveforms and behavioral signal dependency graphs, attendees will gain practical
+          experience with advanced debugging techniques that significantly reduce the effort required to
+          identify and resolve hardware design issues.
+        </p>
+
+        <h4 style="margin-top:1.5rem;">Preparation for the tutorial</h4>
+        <p>
+          Participants are encouraged to download the Tydi tools Docker image before the tutorial, which
+          contains the tools used during the hands-on sessions. Please follow the instructions here:
+          <a href="https://hub.docker.com/r/hdltypetech/tydi-tools" target="_blank" rel="noopener">hdltypetech/tydi-tools</a>.
+        </p>
+
+        <h4 style="margin-top:1.5rem;">Target audience and expertise level</h4>
+        <p>
+          The tutorial is intended for students, researchers, hardware engineers, and practitioners interested
+          in modern hardware design methodologies, hardware debugging, FPGA/ASIC development, and open-source
+          EDA tools. Familiarity with digital design concepts and basic hardware description languages is
+          recommended. Prior experience with Chisel is helpful but not strictly required, as the tutorial
+          includes introductory guidance on the Tydi toolchain and workflow.
+        </p>
+
+        <h4 style="margin-top:1.5rem;">What participants will learn</h4>
+        <p>Following this tutorial, participants will be able to:</p>
+        <ol>
+          <li>Use the Tydi ecosystem for high-level hardware design in Chisel</li>
+          <li>Use type-aware intermediate representations to improve hardware traceability and debugging</li>
+          <li>Debug Chisel hardware designs using Tywaves and ChiselTrace</li>
+          <li>Use behavioral dependency tracing and type-conserving waveforms with ChiselTrace to simplify fault localization</li>
+          <li>Use open-source EDA tooling to support both research and industrial hardware development workflows</li>
+        </ol>
+
+        <h4 style="margin-top:1.5rem;">Related publications</h4>
+        <ul>
+          <li>
+            C. Cromjongh et al., "Hardware-Accelerator Design by Composition: Dataflow Component Interfaces With Tydi-Chisel,"
+            <em>IEEE Transactions on VLSI Systems</em>, vol. 32, no. 12, pp. 2281–2292, 2024.
+          </li>
+          <li>
+            R. Meloni et al., "Tywaves: a typed waveform viewer for Chisel,"
+            <em>IEEE Nordic Circuits and Systems Conference</em>, 2024.
+          </li>
+          <li>
+            J. Brand et al., "ChiselTrace: Typed Behavioral Debugging in Chisel Through Signal Dependency Tracing,"
+            <em>IEEE Nordic Circuits and Systems Conference</em>, 2025.
+          </li>
+        </ul>
+
+        <h4 style="margin-top:1.5rem;">Tutorial presenters</h4>
+        <p>
+          Casper Cromjongh, TU Delft<br>
+          Zaid Al-Ars, HDL TypeTech
+        </p>
+
+        <hr style="margin-top:2rem;margin-bottom:1rem;border:none;border-top:1px solid var(--border, #e2e8f0);">
+        <!--p><em>Tydi Tools brings type-aware hardware debugging to HEART 2026.</em></p-->
+
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="foot">
+      <div>&copy; 2026 HEART — Organized &amp; hosted by Heidelberg University</div>
+      <div>
+        <a href="./index.html#home">Home</a> ·
+        <a href="./Program.html">Program</a> ·
+        <a href="./Registration.html">Registration</a> ·
+        <a href="./Keynotes.html">Keynotes</a> ·
+        <a href="./Tutorial.html">SNN Tutorial</a> ·
+        <a href="./TydiTutorial.html">Tydi Tutorial</a> ·
+        <a href="./index.html#venue">Venue</a> ·
+        <a href="./index.html#cfp">Call for Papers</a> ·
+        <a href="./index.html#announcements">Announcements</a> ·
+        <a href="./Committees.html">Committees</a> ·
+        <a href="./index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
