@@ -58,9 +58,932 @@
   <section id="announcements" aria-labelledby="cs-title">
     <div class="card">
       <div class="card-inner cs">
-        <span class="pill">HEART 2026 Program To be announced</span>
+        <span class="pill">HEART 2026 Preliminary Program</span>
         <!--h3 id="cs-title">Program To be announced</h3-->
-        <p class="muted" style="max-width:720px">Information on the Program will be announced near the conference date. Please check back then.</p>
+        <!--p class="muted" style="max-width:720px">Information on the Program will be announced near the conference date. Please check back then.</p-->
+<div class="conference-program">
+  <style>
+    .conference-program {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding: 24px;
+      border-radius: 20px;
+    }
+
+    .conference-program * {
+      box-sizing: border-box;
+    }
+
+    .program-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .program-header h2 {
+      margin: 0;
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+    }
+
+    .program-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .program-actions button {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      padding: 9px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+    }
+
+    .program-actions button:hover {
+      background: #f1f5f9;
+    }
+
+    .day-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 26px;
+    }
+
+    .day-title {
+      margin: 0;
+      padding: 18px 22px;
+      background: linear-gradient(135deg, #0f172a, #334155);
+      color: #fff;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    .program-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+    }
+
+    .program-table th {
+      text-align: center;
+      padding: 13px 14px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #475569;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    .program-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      vertical-align: middle;
+    }
+
+    .program-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .time {
+      width: 145px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .time-slot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-width: 116px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: #0f172a;
+      font-size: 0.86rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+
+    .time-slot.single {
+      min-width: 74px;
+    }
+
+    .time-dash {
+      color: #94a3b8;
+      font-weight: 900;
+    }
+
+    .track-cell {
+      width: 285px;
+      font-weight: 850;
+    }
+
+    .badge {
+      display: inline;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      font-size: 0.82rem;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    details.program-item {
+      border-radius: 0;
+      background: transparent;
+    }
+
+    details.program-item summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 820;
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    details.program-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.program-item summary::before {
+      content: "+";
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      font-weight: 900;
+      color: #fff;
+      background: #0f172a;
+      margin-top: -1px;
+    }
+
+    details.program-item[open] summary::before {
+      content: "−";
+    }
+
+    .item-meta {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.62);
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .item-meta strong {
+      color: #0f172a;
+    }
+
+    .track-ml td {
+      background: #eff6ff;
+    }
+
+    .track-ml .badge {
+      color: #1d4ed8;
+    }
+
+    .track-quantum td {
+      background: #f5f3ff;
+    }
+
+    .track-quantum .badge {
+      color: #6d28d9;
+    }
+
+    .track-domain td {
+      background: #ecfdf5;
+    }
+
+    .track-domain .badge {
+      color: #047857;
+    }
+
+    .track-riscv td {
+      background: #fff7ed;
+    }
+
+    .track-riscv .badge {
+      color: #c2410c;
+    }
+
+    .track-tools td {
+      background: #ecfeff;
+    }
+
+    .track-tools .badge {
+      color: #0e7490;
+    }
+
+    .track-crypto td {
+      background: #fff1f2;
+    }
+
+    .track-crypto .badge {
+      color: #be123c;
+    }
+
+    .track-numerical td {
+      background: #fefce8;
+    }
+
+    .track-numerical .badge {
+      color: #a16207;
+    }
+
+    .track-shortwip td {
+      background: #f0f9ff;
+    }
+
+    .track-shortwip .badge {
+      color: #0369a1;
+    }
+
+    .track-neutral td {
+      background: #f8fafc;
+    }
+
+    .track-neutral .badge {
+      color: #475569;
+    }
+
+    .track-social td {
+      background: #fffbeb;
+    }
+
+    .track-social .badge {
+      color: #92400e;
+    }
+
+    .track-tutorial td {
+      background: #f0fdfa;
+    }
+
+    .track-tutorial .badge {
+      color: #0f766e;
+    }
+
+    .track-poster td {
+      background: #f7fee7;
+    }
+
+    .track-poster .badge {
+      color: #4d7c0f;
+    }
+
+    .keynote-row td {
+      background:
+        linear-gradient(90deg, rgba(126, 34, 206, 0.18), rgba(250, 245, 255, 0.88)),
+        #faf5ff;
+      border-top: 1px solid rgba(126, 34, 206, 0.24);
+      border-bottom: 1px solid rgba(126, 34, 206, 0.24);
+    }
+
+    .keynote-row .time-slot {
+      background: rgba(255, 255, 255, 0.78);
+      border-color: rgba(126, 34, 206, 0.2);
+      color: #7e22ce;
+    }
+
+    .keynote-badge {
+      color: #7e22ce;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 950;
+    }
+
+    .keynote-title {
+      font-size: 1.03rem;
+      letter-spacing: -0.01em;
+    }
+
+    .separator-row td {
+      padding: 11px 14px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .separator-label {
+      text-align: center;
+      color: #475569;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+    }
+
+    .separator-label span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .separator-label span::before,
+    .separator-label span::after {
+      content: "";
+      display: inline-block;
+      width: 44px;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    @media (max-width: 720px) {
+      .conference-program {
+        padding: 14px;
+      }
+
+      .program-header h2 {
+        font-size: 1.35rem;
+      }
+
+      .day-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+
+  <div class="program-header">
+    <!--h2>Conference Program</h2-->
+    <div class="program-actions">
+      <button type="button" onclick="document.querySelectorAll('.conference-program details').forEach(d => d.open = true)">
+        Expand all
+      </button>
+      <button type="button" onclick="document.querySelectorAll('.conference-program details').forEach(d => d.open = false)">
+        Collapse all
+      </button>
+    </div>
+  </div>
+
+  <section class="day-card">
+    <h3 class="day-title">Day 1 — June 17</h3>
+    <div class="table-wrap">
+      <table class="program-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Session</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-neutral">
+            <td class="time"><div class="time-slot"><span>08:30</span><span class="time-dash">–</span><span>09:00</span></div></td>
+            <td class="track-cell"><span class="badge">Registration</span></td>
+            <td>Registration</td>
+          </tr>
+
+          <tr class="track-neutral">
+            <td class="time"><div class="time-slot"><span>09:00</span><span class="time-dash">–</span><span>09:05</span></div></td>
+            <td class="track-cell"><span class="badge">Welcome</span></td>
+            <td>Welcome Session</td>
+          </tr>
+
+          <tr class="keynote-row">
+            <td class="time"><div class="time-slot"><span>09:05</span><span class="time-dash">–</span><span>10:00</span></div></td>
+            <td class="track-cell"><span class="badge keynote-badge">Keynote</span></td>
+            <td>
+              <details class="program-item">
+                <summary><span class="keynote-title">Keynote by Tobias Becker (Title: To be Announced Soon)</span></summary>
+                <div class="item-meta">
+                  <strong>Speaker:</strong> Tobias Becker
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>10:00</span><span class="time-dash">–</span><span>10:15</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break</span></td>
+          </tr>
+
+          <tr class="track-ml">
+            <td class="time"><div class="time-slot"><span>10:15</span><span class="time-dash">–</span><span>10:35</span></div></td>
+            <td class="track-cell"><span class="badge">Machine Learning &amp; Neural Network Acceleration</span></td>
+            <td>
+              <details class="program-item">
+                <summary>A Reconfigurable Multi-Kernel FPGA Accelerator for Kernel Ridge Regression</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Yousef Alnaser, Wei-Jie Ng, Jan Langer and Harald Kuhn.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-ml">
+            <td class="time"><div class="time-slot"><span>10:35</span><span class="time-dash">–</span><span>10:55</span></div></td>
+            <td class="track-cell"><span class="badge">Machine Learning &amp; Neural Network Acceleration</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Unsupervised Anomaly Detection for Event Cameras with Lightweight Spatio-Temporal Encoder on FPGA</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Hui Yang, Keisuke Sugiura, Takuya Kojima and Yoshiki Yamaguchi.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>10:55</span><span class="time-dash">–</span><span>11:10</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break</span></td>
+          </tr>
+
+          <tr class="track-ml">
+            <td class="time"><div class="time-slot"><span>11:10</span><span class="time-dash">–</span><span>11:30</span></div></td>
+            <td class="track-cell"><span class="badge">Machine Learning &amp; Neural Network Acceleration</span></td>
+            <td>
+              <details class="program-item">
+                <summary>ARES: Dataflow Co-Design for Embedded Swin Transformer Acceleration on SoC-FPGAs</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> João Rodrigues, Horacio Neto and Mário Véstias.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-ml">
+            <td class="time"><div class="time-slot"><span>11:30</span><span class="time-dash">–</span><span>11:50</span></div></td>
+            <td class="track-cell"><span class="badge">Machine Learning &amp; Neural Network Acceleration</span></td>
+            <td>
+              <details class="program-item">
+                <summary>SmartFuse-LLM: Fusing Computation into Collectives for Efficient Tensor-Parallel LLM Systems</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Xiteng Yao, Bangjie Xue, Anthony Skjellum and Martin Herbordt.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-poster">
+            <td class="time"><div class="time-slot"><span>11:50</span><span class="time-dash">–</span><span>11:52</span></div></td>
+            <td class="track-cell"><span class="badge">Poster Pitch</span></td>
+            <td>Poster Pitch Intro</td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:52</span><span class="time-dash">–</span><span>11:53</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Lightweight Adjacency Estimation for Irregular Object Reassembly using Siamese Networks</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Kokoro Kodama, Keisuke Sugiura, Takuya Kojima and Yoshiki Yamaguchi.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:53</span><span class="time-dash">–</span><span>11:54</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Quantized NN Workflow for Low-Latency Multi-Qubit State Discrimination on FPGA</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Pradeep Kumar Gautam, Shantharam Kalipatnapu, Shankaranarayanan H, Ujjawal Singhal, Benjamin Lienhard, Vibhor Singh and Chetan Singh Thakur.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:54</span><span class="time-dash">–</span><span>11:55</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>An FPGA-based Ethernet Interconnect for Quantum Error Correction</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Mizuki Sakata, Yoshito Higa and Yasunori Osana.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:55</span><span class="time-dash">–</span><span>11:56</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>An Evaluation of RRT* Algorithm with Relaxed Data-Dependency for Pipelined Accelerators</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Koh Tomita, Tomonori Izumi and Yoshiki Yamaguchi.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:56</span><span class="time-dash">–</span><span>11:57</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Real-Time Hyperspectral Imaging System for Surgical Guidance</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Dismas Ezechukwu and Dinesh Bhatia.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:57</span><span class="time-dash">–</span><span>11:58</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>TinyRVV: A Minimalist’s Vector Subset for RISC-V</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Jerry Yun and Guy Lemieux.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:58</span><span class="time-dash">–</span><span>11:59</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Procedural Surface Rendering on a BRISKI-Based FPGA Many-Core Architecture: A Case Study</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Kevin Klein, Riadh Ben Abdelhamid and Dirk Koch.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-shortwip">
+            <td class="time"><div class="time-slot"><span>11:59</span><span class="time-dash">–</span><span>12:00</span></div></td>
+            <td class="track-cell"><span class="badge">Short and WIP papers</span></td>
+            <td>
+              <details class="program-item">
+                <summary>FDBench: A Paired Golden-Buggy Benchmark for FPGA Debugging</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Yanjun Lu, Lester Kalms, Narasingh Prasad Joshi and Diana Goehringer.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>12:00</span><span class="time-dash">–</span><span>13:30</span></div></td>
+            <td class="separator-label" colspan="2"><span>Lunch</span></td>
+          </tr>
+
+          <tr class="track-poster">
+            <td class="time"><div class="time-slot"><span>13:30</span><span class="time-dash">–</span><span>14:00</span></div></td>
+            <td class="track-cell"><span class="badge">Posters</span></td>
+            <td>Poster Session</td>
+          </tr>
+
+          <tr class="track-quantum">
+            <td class="time"><div class="time-slot"><span>14:00</span><span class="time-dash">–</span><span>14:20</span></div></td>
+            <td class="track-cell"><span class="badge">Quantum Computing</span></td>
+            <td>
+              <details class="program-item">
+                <summary>QECHPC-Cluster: Research-Oriented FPGA Cluster for Quantum Error Correction and HPC Applications</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Kentaro Sano, Tomohiro Ueno, Fuga Kato, Kazuya Mochizuki, Katsuhiko Ota and Nozomu Matsunaga.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-quantum">
+            <td class="time"><div class="time-slot"><span>14:20</span><span class="time-dash">–</span><span>14:40</span></div></td>
+            <td class="track-cell"><span class="badge">Quantum Computing</span></td>
+            <td>
+              <details class="program-item">
+                <summary>From XLS to SFQ: Automated Topology-Constrained Pipeline Synthesis for Single-Flux-Quantum Circuit Design</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Hikaru Kobayashi, Mebuki Oishi and Shinya Takamaeda-Yamazaki.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>14:40</span><span class="time-dash">–</span><span>15:10</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break and Posters</span></td>
+          </tr>
+
+          <tr class="track-crypto">
+            <td class="time"><div class="time-slot"><span>15:10</span><span class="time-dash">–</span><span>15:30</span></div></td>
+            <td class="track-cell"><span class="badge">Cryptography and Security</span></td>
+            <td>
+              <details class="program-item">
+                <summary>High-Throughput FPGA Acceleration of the Number Theoretic Transform for FV Homomorphic Encryption</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Benjamin Steeg, Zahra Mojtahedin, Hassan Nassar and Joerg Henkel.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-crypto">
+            <td class="time"><div class="time-slot"><span>15:30</span><span class="time-dash">–</span><span>15:50</span></div></td>
+            <td class="track-cell"><span class="badge">Cryptography and Security</span></td>
+            <td>
+              <details class="program-item">
+                <summary>KHONSU: Kernel Hash Offload Network of Swappable Units for Post-Quantum Signatures</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Mohamed El-Hadedy and Wen-Mei Hwu.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>15:50</span><span class="time-dash">–</span><span>16:20</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break and Posters</span></td>
+          </tr>
+
+          <tr class="track-numerical">
+            <td class="time"><div class="time-slot"><span>16:20</span><span class="time-dash">–</span><span>16:40</span></div></td>
+            <td class="track-cell"><span class="badge">Numerical / Arithmetic Hardware</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Systematic Function Approximation on FPGAs to Address Accuracy and Throughput Issues in oneAPI and Vitis HLS Math Libraries</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Gerrit Pape, Christian Plessl and Tobias Kenter.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-numerical">
+            <td class="time"><div class="time-slot"><span>16:40</span><span class="time-dash">–</span><span>17:00</span></div></td>
+            <td class="track-cell"><span class="badge">Numerical / Arithmetic Hardware</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Hardware Sharing for Area Optimization of Floating-Point ALUs</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Rikuto Ide, Tanvir Ahmed, Boma Adhi, Shunya Kawai, Omkar Bhilare and Jason Anderson.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-social">
+            <td class="time"><div class="time-slot single"><span>18:50</span></div></td>
+            <td class="track-cell"><span class="badge">Social Event</span></td>
+            <td>Banquet (Kultur Brauerei)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="day-card">
+    <h3 class="day-title">Day 2 — June 18</h3>
+    <div class="table-wrap">
+      <table class="program-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Session</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-neutral">
+            <td class="time"><div class="time-slot"><span>09:30</span><span class="time-dash">–</span><span>10:00</span></div></td>
+            <td class="track-cell"><span class="badge">Registration</span></td>
+            <td>Registration</td>
+          </tr>
+
+          <tr class="keynote-row">
+            <td class="time"><div class="time-slot"><span>10:05</span><span class="time-dash">–</span><span>11:00</span></div></td>
+            <td class="track-cell"><span class="badge keynote-badge">Keynote</span></td>
+            <td>
+              <details class="program-item">
+                <summary><span class="keynote-title">From Prototype to Planet-Scale: A Decade of Acceleration at Hyperscale</span></summary>
+                <div class="item-meta">
+                  <strong>Speaker:</strong> Andrew Putnam
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>11:00</span><span class="time-dash">–</span><span>11:20</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break</span></td>
+          </tr>
+
+          <tr class="track-domain">
+            <td class="time"><div class="time-slot"><span>11:20</span><span class="time-dash">–</span><span>11:40</span></div></td>
+            <td class="track-cell"><span class="badge">Domain-Specific Applications</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Exploring the AMD Versal System-on-Chip for Protein-based Phylogenetics</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Nils Rutgers and Nikolaos Alachiotis.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-domain">
+            <td class="time"><div class="time-slot"><span>11:40</span><span class="time-dash">–</span><span>12:00</span></div></td>
+            <td class="track-cell"><span class="badge">Domain-Specific Applications</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Ray Marching on FPGAs</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Kevin Klein and Dirk Koch.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>12:00</span><span class="time-dash">–</span><span>13:30</span></div></td>
+            <td class="separator-label" colspan="2"><span>Lunch and Posters</span></td>
+          </tr>
+
+          <tr class="track-riscv">
+            <td class="time"><div class="time-slot"><span>13:30</span><span class="time-dash">–</span><span>13:50</span></div></td>
+            <td class="track-cell"><span class="badge">RISC-V &amp; Multi-Processor Architectures</span></td>
+            <td>
+              <details class="program-item">
+                <summary>SYNtzulu-Conv: Enabling Spiking 2D Convolutions for Sensor Data Analysis on Low-Power FPGAs</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Gianluca Leone, Federico Mura, Luigi Raffo and Paolo Meloni.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-riscv">
+            <td class="time"><div class="time-slot"><span>13:50</span><span class="time-dash">–</span><span>14:10</span></div></td>
+            <td class="track-cell"><span class="badge">RISC-V &amp; Multi-Processor Architectures</span></td>
+            <td>
+              <details class="program-item">
+                <summary>High Performance Multi-Processor Systems on FPGA</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Martin Langhammer and Bogdan Pasca.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-riscv">
+            <td class="time"><div class="time-slot"><span>14:10</span><span class="time-dash">–</span><span>14:30</span></div></td>
+            <td class="track-cell"><span class="badge">RISC-V &amp; Multi-Processor Architectures</span></td>
+            <td>
+              <details class="program-item">
+                <summary>MXM-RVV: Multicore and Multithreaded RISC-V Vectors</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Joseph Maheshe and Guy Lemieux.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>14:30</span><span class="time-dash">–</span><span>15:00</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break and Posters</span></td>
+          </tr>
+
+          <tr class="track-tools">
+            <td class="time"><div class="time-slot"><span>15:00</span><span class="time-dash">–</span><span>15:20</span></div></td>
+            <td class="track-cell"><span class="badge">Compilers, HLS &amp; Design Automation Tools</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Expanding and partitioning HLS-compatible software regions for CPU-FPGA systems via code transformations</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Tiago Santos, João Bispo and João Cardoso.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-tools">
+            <td class="time"><div class="time-slot"><span>15:20</span><span class="time-dash">–</span><span>15:40</span></div></td>
+            <td class="track-cell"><span class="badge">Compilers, HLS &amp; Design Automation Tools</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Backend Code Generation for Graph DSLs Targeting Diverse Accelerator Platforms</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Ashwina Kumar, M. Venkata Krishna, Prasanna Bartakke, Mathew Thomas, Rahul Kumar, Rajesh Pandian M, Nibedita Behera and Rupesh Nasre.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-tools">
+            <td class="time"><div class="time-slot"><span>15:40</span><span class="time-dash">–</span><span>16:00</span></div></td>
+            <td class="track-cell"><span class="badge">Compilers, HLS &amp; Design Automation Tools</span></td>
+            <td>
+              <details class="program-item">
+                <summary>Multi-Target Compiler Analyses, Optimization, and Code Generation Framework for Graph DSLs</summary>
+                <div class="item-meta">
+                  <strong>Authors:</strong> Ashwina Kumar, Naveen Ls, Shriram Chandran, Hemesh Dj, Gudla Sanjay, Kovvuri Sravan Kumar Reddy, Kovvuri Sravan Kumar Reddy, Nibedita Behera and Rupesh Nasre.
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="track-social">
+            <td class="time"><div class="time-slot single"><span>19:00</span></div></td>
+            <td class="track-cell"><span class="badge">Social Event</span></td>
+            <td> Castle Visit, City Tour and Dinner</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="day-card">
+    <h3 class="day-title">Day 3 — June 19</h3>
+    <div class="table-wrap">
+      <table class="program-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Session</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-neutral">
+            <td class="time"><div class="time-slot"><span>08:30</span><span class="time-dash">–</span><span>09:00</span></div></td>
+            <td class="track-cell"><span class="badge">Registration</span></td>
+            <td>Registration</td>
+          </tr>
+
+          <tr class="keynote-row">
+            <td class="time"><div class="time-slot"><span>09:05</span><span class="time-dash">–</span><span>10:00</span></div></td>
+            <td class="track-cell"><span class="badge keynote-badge">Keynote</span></td>
+            <td>
+              <details class="program-item">
+                <summary><span class="keynote-title">FPGAs in High-Performance Computing: Challenges and Opportunities</span></summary>
+                <div class="item-meta">
+                  <strong>Speaker:</strong> Tobias Kenter
+                </div>
+              </details>
+            </td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>10:00</span><span class="time-dash">–</span><span>10:10</span></div></td>
+            <td class="separator-label" colspan="2"><span>Coffee Break</span></td>
+          </tr>
+
+          <tr class="track-tutorial">
+            <td class="time"><div class="time-slot"><span>10:10</span><span class="time-dash">–</span><span>13:00</span></div></td>
+            <td class="track-cell"><span class="badge">Tutorials</span></td>
+            <td>Tutorials — SNN</td>
+          </tr>
+
+          <tr class="separator-row">
+            <td class="time"><div class="time-slot"><span>13:00</span><span class="time-dash">–</span><span>14:10</span></div></td>
+            <td class="separator-label" colspan="2"><span>Lunch</span></td>
+          </tr>
+
+          <tr class="track-tutorial">
+            <td class="time"><div class="time-slot"><span>14:10</span><span class="time-dash">–</span><span>17:00</span></div></td>
+            <td class="track-cell"><span class="badge">Tutorials</span></td>
+            <td>Tutorials — OpenSource EDA</td>
+          </tr>
+
+          <tr class="track-social">
+            <td class="time"><div class="time-slot single"><span>17:00</span></div></td>
+            <td class="track-cell"><span class="badge">Social Event</span></td>
+            <td>HEART Farewell BBQ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
         <p><a class="btn btn-primary" href="./index.html#home">Back to Home</a></p>
       </div>
     </div>
