@@ -62,19 +62,23 @@
       <div class="card-inner norg">
 
         <div>
-          <span class="badge">Tutorial: Development and Deployment of SNNs on FPGA with YANA</span>
+          <span class="badge">End-to-End Spiking Neural Network Acceleration with YANA: From Training to FPGA Deployment</span>
         </div>
 
         <p>
-          This tutorial presents an in-depth introduction to <strong>YANA</strong>, a many-core near-memory-computing
-          Spiking Neural Network (SNN) FPGA accelerator developed at the FZI Research Center for
-          Information Technology. The accelerator targets embedded sensor processing applications in
-          medical, industrial, and automotive contexts, with a focus on dataset evaluation and
-          real-time processing of high data rate neuromorphic sensors. Participants will gain hands-on
-          experience with key co-design decisions such as quantization, the mapping of logical neurons
-          onto physical processing elements, and the accelerator's integration within a System-on-Chip
-          (SoC) FPGA environment running Linux. The YANA framework will be made available open source
-          ahead of the tutorial.
+          This hands-on tutorial presents an introduction to the open-source neuromorphic ecosystem through
+          <strong>YANA</strong>, an event-driven, many-core, near-memory-computing Spiking Neural Network (SNN) FPGA
+          accelerator developed within the
+          <a href="https://scholar.google.com/citations?user=XhPqAS4AAAAJ" target="_blank" rel="noopener">Group Becker</a>
+          at the FZI Research Center for Information Technology. Participants will explore the end-to-end workflow
+          and gain practical experience with key co-design decisions—such as pruning, quantization, and the mapping
+          of logical neurons onto physical processing elements—by training and evaluating a deep SNN using
+          <a href="https://github.com/norse/norse" target="_blank" rel="noopener">Norse</a>, exporting the model via
+          <a href="https://github.com/neuromorphs/NIR" target="_blank" rel="noopener">NIR</a>, and deploying it using
+          the YANA toolchain. Finally, attendees will evaluate their results in RTL simulation using Vivado or
+          directly on a
+          <a href="https://www.amd.com/de/products/system-on-modules/kria/k26/kr260-robotics-starter-kit.html" target="_blank" rel="noopener">Kria KR260</a>
+          development board.
         </p>
 
         <h4 style="margin-top:1.5rem;">Tutorial Outline <span style="font-weight:400;font-style:italic;">(preliminary)</span></h5>
@@ -89,6 +93,7 @@
                   <li>Evaluate results for different parameterizations</li>
                 </ul>
               </li>
+              <li>In RTL simulation, verify latency and bit-accuracy of the exported SNN</li>
               <li>Transfer generated accelerator init files to the <a href="https://www.amd.com/de/products/system-on-modules/kria/k26/kr260-robotics-starter-kit.html" target="_blank" rel="noopener">KR260</a> platform</li>
             </ul>
           </li>
@@ -101,19 +106,37 @@
           </li>
         </ol>
 
+        <h4 style="margin-top:1.5rem;">Participant Requirements</h4>
+        <ul>
+          <li>Please bring a laptop with Xilinx Vivado pre-installed for hardware simulation.</li>
+          <li>
+            We will provide 1–2 shared Kria KR260 boards for the group, but if you have your own KR260, you are highly encouraged to bring it!
+            <ul>
+              <li>Additional bootable SD cards and an image for flashing will be available during the tutorial.</li>
+            </ul>
+          </li>
+          <li> The YANA framework is available on <a href="https://github.com/fzi-forschungszentrum-informatik/yana/tree/main" target="_blank" rel="noopener">GitHub</a>. A purpose-built docker image for the tutorial will be available soon. </li>
+        </ul>
+
+        <h4 style="margin-top:1.5rem;">Target Audience</h4>
+        <p>
+          Researchers, students, and engineers interested in neuromorphic computing, hardware acceleration,
+          and edge AI deployment.
+        </p>
+
+        <h4 style="margin-top:1.5rem;">Related Publications</h4>
+        <ul>
+          <li>
+            B. Pachideh et al., &ldquo;YANA: Bridging the Neuromorphic Simulation-to-Hardware Gap&rdquo;,
+            International Conference on Brain Informatics (BI), 2025, Springer.
+          </li>
+        </ul>
+
         <h4 style="margin-top:1.5rem;">Contact</h3>
         <p>
           <a href="mailto:pachideh@fzi.de">Brian Pachideh</a> —
           Cc: <a href="mailto:nitzsche@fzi.de">Sven Nitzsche</a>,
           <a href="mailto:neher@fzi.de">Moritz Neher</a>
-        </p>
-
-        <p class="muted" style="margin-top:1.5rem;">
-          <strong style="font-style:normal;">Further announcements</strong> —
-          Additional information will be published on this page as the conference approaches. This includes
-          preparation steps and any software participants should have ready on their laptops before the
-          tutorial, downloadable resources shared ahead of time, and details on what to bring on the day.
-          Please check back closer to the event.
         </p>
 
         <hr style="margin-top:2rem;margin-bottom:1rem;border:none;border-top:1px solid var(--border, #e2e8f0);">
