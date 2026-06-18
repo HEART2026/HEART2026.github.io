@@ -424,17 +424,132 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 720px) {
+    /* Tablets in portrait: let the table breathe instead of hard-scrolling */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .program-table {
+        min-width: 0;
+      }
+
+      .program-table .track-cell {
+        width: auto;
+      }
+
+      .program-table .time {
+        width: 120px;
+      }
+    }
+
+    /* Phones & small tablets: collapse the table into stacked cards */
+    @media (max-width: 768px) {
       .conference-program {
-        padding: 14px;
+        padding: 12px;
+        border-radius: 14px;
+      }
+
+      .program-header {
+        margin-bottom: 16px;
       }
 
       .program-header h2 {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
+      }
+
+      .program-actions {
+        width: 100%;
+      }
+
+      .program-actions button {
+        flex: 1 1 auto;
+      }
+
+      .day-card {
+        border-radius: 14px;
+        margin-bottom: 18px;
       }
 
       .day-title {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        padding: 14px 16px;
+      }
+
+      /* Drop the horizontal scroll and turn each row into a stacked card */
+      .table-wrap {
+        overflow-x: visible;
+      }
+
+      .program-table {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .program-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .program-table tbody,
+      .program-table tr,
+      .program-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .program-table tr {
+        padding: 7px 0;
+      }
+
+      .program-table td {
+        padding: 3px 16px;
+        border: none;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .program-table td.time {
+        width: auto;
+        text-align: left;
+        padding-top: 11px;
+      }
+
+      .program-table td.time:empty {
+        display: none;
+      }
+
+      .program-table td.track-cell {
+        width: auto;
+      }
+
+      .program-table td:last-child {
+        padding-bottom: 11px;
+      }
+
+      /* Session header rows have an empty time cell — keep them padded */
+      .session-row .track-cell {
+        padding-top: 11px;
+      }
+
+      .time-slot {
+        min-width: 0;
+      }
+
+      .separator-row td.separator-label {
+        text-align: center;
+      }
+
+      .separator-label span::before,
+      .separator-label span::after {
+        width: 24px;
+      }
+
+      details.program-item summary {
+        gap: 8px;
       }
     }
   </style>
